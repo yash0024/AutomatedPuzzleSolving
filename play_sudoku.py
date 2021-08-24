@@ -1,20 +1,4 @@
 """
-CSC148, Winter 2021
-Assignment 2: Automatic Puzzle Solver
-==============================
-This code is provided solely for the personal and private use of
-students taking the CSC148 course at the University of Toronto.
-Copying for purposes other than this use is expressly prohibited.
-All forms of distribution of this code, whether as given or with
-any changes, are expressly prohibited.
-
-Authors: Diane Horton, Jonathan Calver, Sophia Huynh,
-         Maryam Majedi, and Jaisie Sin.
-
-All of the files in this directory are:
-Copyright (c) 2021 Diane Horton, Jonathan Calver, Sophia Huynh,
-                   Maryam Majedi, and Jaisie Sin.
-
 === Module Description ===
 
 This module contains a basic GUI to allow you to play randomly generated
@@ -40,7 +24,7 @@ from solver import DfsSolver
 from sudoku_puzzle import SudokuPuzzle, EMPTY_CELL
 
 # You can configure the settings here
-N = 16  # puzzle size - suggested is either 4 or 9 (untested on 16)
+N = 4  # puzzle size - suggested is either 4 or 9 (untested on 16)
 
 # Pick how many numbers you want in the grid
 # Don't pick this too small or it might be slow to generate a puzzle for you!
@@ -59,16 +43,13 @@ UI_ITEM_HEIGHT = HEIGHT // (N + 2)  # +2 to account for buttons at the bottom.
 UI_ITEM_WIDTH = WIDTH // N
 
 
-# An example of how we can extend our SudokuPuzzle class to give it more
-# features.
+
 class RandomizedSudokuPuzzle(SudokuPuzzle):
     """
     A sudoku puzzle where we randomize the extensions - allowing us
     to randomly generate puzzles.
     """
 
-    # This is why we were using type(self)(...) in the SudokuPuzzle
-    # extensions method - otherwise this wouldn't do what we intended.
     def extensions(self) -> List[RandomizedSudokuPuzzle]:
         """
         Return a list of extensions of this sudoku puzzle.
@@ -97,8 +78,7 @@ class RandomizedSudokuPuzzle(SudokuPuzzle):
         return sorted(list(allowed_symbols))
 
 
-# This is the part that makes use of our
-# DfsSolver.solve method and SudokuPuzzle.has_unique_solution method
+
 # Note: This approach is rather inefficient, but demonstrates a
 #       straightforward, intuitive way of generating a valid sudoku puzzle.
 def make_sudoku(n: int = N,
@@ -110,7 +90,7 @@ def make_sudoku(n: int = N,
 
     This function attempts to leave <num_starting> squares with numbers in them.
     """
-    # generate a random filled sudoku grid... using our solver!
+    # generate a random filled sudoku grid... using the solver!
     grid = [[' ' for i in range(n)] for j in range(n)]
     symbols = {str(i) for i in range(1, n + 1)}
     s = RandomizedSudokuPuzzle(n, grid, symbols)
@@ -121,7 +101,7 @@ def make_sudoku(n: int = N,
     # looking back through the solution path for a potential puzzle.
     puzzle_solution = DfsSolver().solve(s)[-1]
 
-    # We'll randomly remove some values from the solved puzzle,
+    # Randomly remove some values from the solved puzzle,
     # ensuring not to violate uniqueness of the solution.
 
     num_to_remove = n ** 2 - num_starting
@@ -476,11 +456,11 @@ def show_instructions() -> None:
     # https://www.colorschemer.com/ascii-art-generator/
     print(r"""
 ================================================================================
-       ___  __    ___  _ _  _    ___    __           _       _          
-      / __\/ _\  / __\/ | || |  ( _ )  / _\_   _  __| | ___ | | ___   _ 
+       ___  __    ___  _ _  _    ___    __           _       _
+      / __\/ _\  / __\/ | || |  ( _ )  / _\_   _  __| | ___ | | ___   _
      / /   \ \  / /   | | || |_ / _ \  \ \| | | |/ _` |/ _ \| |/ / | | |
     / /___ _\ \/ /___ | |__   _| (_) | _\ \ |_| | (_| | (_) |   <| |_| |
-    \____/ \__/\____/ |_|  |_|  \___/  \__/\__,_|\__,_|\___/|_|\_\\__,_|                                                                    
+    \____/ \__/\____/ |_|  |_|  \___/  \__/\__,_|\__,_|\___/|_|\_\\__,_|
 ================================================================================
 HOW TO CHANGE PUZZLE SIZE AND HOW MANY STARTING NUMBERS ARE IN THE GRID:
 
@@ -492,7 +472,7 @@ In play_sudoku.py you can change the two values below and rerun the file.
           SudokuPuzzle.has_unique_solution!
 ================================================================================
 HOW TO PLAY:
-             
+
 NEW - generate a new puzzle
 CHECK - any VALUES you have entered that are CORRECT will become FIXED
 HINTS ON/OFF - when ON, a tool tip menu shows what VALUES can go in a

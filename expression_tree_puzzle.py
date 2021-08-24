@@ -1,20 +1,4 @@
 """
-CSC148, Winter 2021
-Assignment 2: Automatic Puzzle Solver
-==============================
-This code is provided solely for the personal and private use of
-students taking the CSC148 course at the University of Toronto.
-Copying for purposes other than this use is expressly prohibited.
-All forms of distribution of this code, whether as given or with
-any changes, are expressly prohibited.
-
-Authors: Diane Horton, Jonathan Calver, Sophia Huynh,
-         Maryam Majedi, and Jaisie Sin.
-
-All of the files in this directory are:
-Copyright (c) 2021 Diane Horton, Jonathan Calver, Sophia Huynh,
-                   Maryam Majedi, and Jaisie Sin.
-
 === Module Description ===
 
 This module contains the ExpressionTreePuzzle class.
@@ -162,11 +146,7 @@ class ExpressionTreePuzzle(Puzzle):
                 extensions.append(tree)
         return extensions
 
-    # The specifics of how you implement this are up to you.
-    # Hint 1: remember that a puzzle can only be extended by assigning a value
-    #         to an unassigned variable.
-    # Hint 2: remember that our expression tree only supports addition,
-    #         multiplication, and non-negative integers.
+
     def fail_fast(self) -> bool:
         """
         Return True if this ExpressionTreePuzzle can be quickly determined to

@@ -1,30 +1,7 @@
 """
-CSC148, Winter 2021
-Assignment 2: Automatic Puzzle Solver
-==============================
-This code is provided solely for the personal and private use of
-students taking the CSC148 course at the University of Toronto.
-Copying for purposes other than this use is expressly prohibited.
-All forms of distribution of this code, whether as given or with
-any changes, are expressly prohibited.
-
-Authors: Diane Horton, Jonathan Calver, Sophia Huynh,
-         Maryam Majedi, and Jaisie Sin.
-
-All of the files in this directory are:
-Copyright (c) 2021 Diane Horton, Jonathan Calver, Sophia Huynh,
-                   Maryam Majedi, and Jaisie Sin.
-
 === Module Description ===
 
 This module contains the sudoku puzzle class.
-
-Note: Some of the provided code makes use of list comprehensions
-      and can be a bit hard to understand if you aren't familiar with
-      them. You do NOT need to understand HOW the provided code works,
-      but you need to understand WHAT services it is providing, so that you
-      can make use of the provided private methods to help you with the task of
-      implementing fail_fast.
 """
 
 from __future__ import annotations
@@ -252,9 +229,6 @@ class SudokuPuzzle(Puzzle):
         # list of SudokuPuzzles with each legal digit at position r, c
         return_lst = []
         for symbol in allowed_symbols:
-            # NOTE: type(self)(...) means create a new SudokuPuzzle,
-            # we do this here so that if we were to create a subclass of
-            # SudokuPuzzle later, then this will work as intended
             new_puzzle = type(self)(n, symbols[:r]
                                     + [symbols[r][:c]
                                        + [symbol]
@@ -263,18 +237,7 @@ class SudokuPuzzle(Puzzle):
             return_lst.append(new_puzzle)
         return return_lst
 
-    # If there is an open position with no symbols available
-    # (i.e. all symbols are already used in the same row, column, or subsquare),
-    # then the sudoku puzzle is not solvable.
-    #
-    # Hint: You may find the provided private methods below helpful.
-    #       The helpers return sets - see the provided code for extensions
-    #       above for an example of how they can be used.
-    #
-    # Note: You can take the union of two sets, set_a and set_b as either
-    #       set_a | set_b or set_a.union(set_b).
-    #       Example:
-    #            {'1', '2', '3'} | {'2', '4', '5'} == {'1', '2', '3', '4', '5'}
+
     def fail_fast(self) -> bool:
         """
         Return True if some unfilled position has no allowable symbols
@@ -314,7 +277,7 @@ class SudokuPuzzle(Puzzle):
         return False
 
     # some private helper methods
-    # Note: these return sets of symbols you may find useful
+
     def _row_set(self, r: int) -> Set[str]:
         # Return set of symbols in row r of SudokuPuzzle self's grid.
 
@@ -344,8 +307,6 @@ class SudokuPuzzle(Puzzle):
                 subsquare_symbols.append(self._grid[ul_row + i][ul_col + j])
         return set(subsquare_symbols)
 
-    # Implement this method according to its docstring
-    # You may import any modules that you need when implementing this method.
     def has_unique_solution(self) -> bool:
         """
         Return True if the this Sudoku puzzle has exactly one unique solution,
@@ -368,7 +329,7 @@ class SudokuPuzzle(Puzzle):
 
 
 if __name__ == "__main__":
-    # any code you want to use for testing your code above
+
     import python_ta
 
     python_ta.check_all(config={'pyta-reporter': 'ColorReporter',

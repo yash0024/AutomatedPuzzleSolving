@@ -1,20 +1,4 @@
 """
-CSC148, Winter 2021
-Assignment 2: Automatic Puzzle Solver
-==============================
-This code is provided solely for the personal and private use of
-students taking the CSC148 course at the University of Toronto.
-Copying for purposes other than this use is expressly prohibited.
-All forms of distribution of this code, whether as given or with
-any changes, are expressly prohibited.
-
-Authors: Diane Horton, Jonathan Calver, Sophia Huynh,
-         Maryam Majedi, and Jaisie Sin.
-
-All of the files in this directory are:
-Copyright (c) 2021 Diane Horton, Jonathan Calver, Sophia Huynh,
-                   Maryam Majedi, and Jaisie Sin.
-
 === Module Description ===
 
 This module contains the abstract Solver class and its two subclasses, which
@@ -23,8 +7,6 @@ find solutions to puzzles, step by step.
 
 from __future__ import annotations
 from typing import List, Optional, Set
-
-# You may remove this import if you don't use it in your code.
 
 from adts import Queue
 
@@ -64,9 +46,6 @@ class Solver:
         raise NotImplementedError
 
 
-# Your solve method MUST be a recursive function (i.e. it must make
-# at least one recursive call to itself)
-# You may NOT change the interface to the solve method.
 class DfsSolver(Solver):
     """"
     A solver for full-information puzzles that uses
@@ -109,7 +88,6 @@ class DfsSolver(Solver):
         return []
 
 
-# Hint: You may find a Queue useful here.
 class BfsSolver(Solver):
     """"
     A solver for full-information puzzles that uses
