@@ -33,10 +33,6 @@ def make_word_ladder(difficulty: str = 'easy',
     should be tried until either they have all been tried or a puzzle with
     the correct difficulty was found.
 
-    Note: this is a rather inefficient way to do this
-    (once you finish the assignment, you can try writing a
-     smarter puzzle maker!)
-
     """
     if word_set is None:
         word_set = load_words()

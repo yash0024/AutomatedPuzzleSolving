@@ -314,9 +314,6 @@ class SudokuPuzzle(Puzzle):
 
         Two "solutions" are considered to be equal if the final puzzle
         state is the same.
-
-        Hint: You should find the optional parameter, seen, for the Solver
-        class' solve method very useful here.
         """
         bfs = BfsSolver()
         c = bfs.solve(self)

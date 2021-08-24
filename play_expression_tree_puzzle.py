@@ -115,7 +115,7 @@ class ExpressionTreePuzzleGUI:
 
     def _apply_hint(self, hint_vars: Dict[str, int]) -> None:
         """
-        Apply the hint - this updates both the puzzle's variables
+        This updates both the puzzle's variables
         and the values stored in the GUI's dropdown menus to be consistent
         with having updated one of the puzzle's variables to have the same
         value as the corresponding variable in <hint_vars>.

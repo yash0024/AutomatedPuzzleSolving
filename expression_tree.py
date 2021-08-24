@@ -280,7 +280,6 @@ class ExprTree:
         Helper for creating a visualization of this ExprTree using networkx
         and matplotlib.
 
-        You do not need to understand this code.
         """
         label_map, at_depth = maps
         # record all nodes at each depth and create
@@ -305,12 +304,6 @@ class ExprTree:
 def construct_from_list(values: List[List[Union[str, int]]]) -> ExprTree:
     """
     Construct an expression tree from <values>.
-
-    See the handout for a detailed explanation of how <values>
-    encodes the expression tree.
-
-    Hint: We have provided you with the helper method ExprTree.append
-          You will likely want to use this method.
 
     Precondition:
     <values> encodes a valid expression tree
@@ -358,9 +351,6 @@ def visualize(tree: ExprTree,
               fname: str = "./expr_tree_sample") -> None:
     """
     Create a visualization of the given <tree> using networkx and matplotlib.
-
-    You do not need to understand this code, but may find it helpful to use
-    it in order to visually see what the expression tree looks like.
 
     Providing the optional argument <display> set to True will display
     the resulting image.

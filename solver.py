@@ -19,11 +19,6 @@ class Solver:
     and purely provides the interface for our solve method.
     """
 
-    # You may NOT change the interface to the solve method.
-    # Note the optional parameter seen and its type.
-    # Your implementations of this method in the two subclasses should use seen
-    # to keep track of all puzzle states that you encounter during the
-    # solution process.
     def solve(self, puzzle: Puzzle,
               seen: Optional[Set[str]] = None) -> List[Puzzle]:
         """

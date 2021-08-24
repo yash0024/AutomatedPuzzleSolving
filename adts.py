@@ -105,7 +105,6 @@ class Queue:
         """Remove and return the item at the front of this queue.
 
         Return None if this Queue is empty.
-        (We illustrate a different mechanism for handling an erroneous case.)
 
         >>> q = Queue()
         >>> q.enqueue('hello')

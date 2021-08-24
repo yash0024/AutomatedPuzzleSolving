@@ -22,8 +22,8 @@ class Puzzle:
         Note: fail_fast may return False in some situations where
         it can't EASILY be determined that the puzzle has no solution.
 
-        Override this in a subclass where you can EASILY determine that
-        this Puzzle can't be solved.
+        But we can override this in a subclass where it can EASILY be
+        determined that this Puzzle can't be solved.
         """
         return False
 

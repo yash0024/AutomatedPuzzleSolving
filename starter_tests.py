@@ -43,8 +43,6 @@ def test_has_unique_solution_doctest() -> None:
 
 def test_dfs_solver_example() -> None:
     """Test DfsSolver.solve on a SudokuPuzzle."""
-    # This SudokuPuzzle is a more filled-in version of the one in the
-    # example from the handout.
     s = SudokuPuzzle(4, [["C", "D", "B", "A"],
                          ["B", "A", "D", "C"],
                          ["D", " ", "A", " "],
@@ -65,8 +63,6 @@ def test_dfs_solver_example() -> None:
 
 def test_bfs_solver_example() -> None:
     """Test BfsSolver.solve on a SudokuPuzzle."""
-    # This SudokuPuzzle is a more filled-in version of the one in the
-    # example from the handout.
     s = SudokuPuzzle(4, [["C", "D", "B", "A"],
                          ["B", "A", "D", "C"],
                          ["D", " ", "A", " "],
@@ -158,7 +154,6 @@ def test_expression_tree_populate_lookup_doctest() -> None:
 
 def test_expression_tree_construct_from_list_doctest() -> None:
     """Test ExprTree.construct_from_list on the provided doctest"""
-    # This test relies on ExprTree.__str__ working correctly.
     example = [[5]]
     exp_t = construct_from_list(example)
     assert str(exp_t) == '5'
@@ -170,7 +165,6 @@ def test_expression_tree_construct_from_list_doctest() -> None:
 
 def test_expression_tree_substitute_doctest() -> None:
     """Test ExprTree.substitute on the provided doctest"""
-    # This test relies on ExprTree.__str__ working correctly.
     exp_t = ExprTree('a', [])
     exp_t.substitute({'a': 1})
     assert str(exp_t) == '1'

@@ -2,11 +2,7 @@
 === Module Description ===
 
 This module contains a basic GUI to allow you to play randomly generated
-instances of your SudokuPuzzle once you have completed the necessary parts
-of the assignment. When run, instructions on how to use it are displayed
-in the console.
-
-Feel free to modify this module.
+instances of your SudokuPuzzle.
 """
 from __future__ import annotations
 from typing import List, Tuple
@@ -96,7 +92,7 @@ def make_sudoku(n: int = N,
     s = RandomizedSudokuPuzzle(n, grid, symbols)
 
     # Note: Since extensions always works from top left to bottom right,
-    # only the final solution is really of any use to us - if extensions
+    # only the final solution is really of any use - if extensions
     # instead randomly chose a square to fill in, then we could consider
     # looking back through the solution path for a potential puzzle.
     puzzle_solution = DfsSolver().solve(s)[-1]
