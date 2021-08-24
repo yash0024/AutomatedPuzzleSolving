@@ -1,5 +1,4 @@
 """
-
 ===== Module Description =====
 
 This module contains list-based implementations of the Stack and Queue
