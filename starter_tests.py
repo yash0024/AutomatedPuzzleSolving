@@ -2,7 +2,7 @@
 
 ===== Module Description =====
 
-This module contains sample test cases to test the code.
+This module contains test cases to test the code.
 """
 
 from sudoku_puzzle import SudokuPuzzle
