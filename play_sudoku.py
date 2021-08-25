@@ -351,7 +351,7 @@ class SudokuPuzzleGUI:
         """
         Main loop for playing a sudoku puzzle in the GUI.
         """
-        pygame.display.set_caption('CSC148 Sudoku 2021')
+        pygame.display.set_caption('Sudoku')
         clock = pygame.time.Clock()
         self._is_running = True
 
